@@ -45,4 +45,41 @@ func main() {
 	for key, val := range chicken4 {
 		fmt.Println(key, " \t:", val)
 	}
+
+	fmt.Println("=== delete item map ===")
+	var chicken5 = map[string]int{
+
+		"januari":  50,
+		"februari": 40,
+	}
+	fmt.Println(len(chicken5))
+	fmt.Println(chicken5)
+
+	delete(chicken5, "januari")
+
+	fmt.Println(len(chicken5))
+	fmt.Println(chicken5)
+
+	fmt.Println("=== deteksi item dengan key tertentu ===")
+	var chicken6 = map[string]int{
+		"januari":  50,
+		"februari": 40,
+	}
+	var value, isExist = chicken6["mei"]
+
+	if isExist {
+		fmt.Println(value)
+	} else {
+		fmt.Println("item is not exist")
+	}
+	fmt.Println("=== kombinasi slice dan map ===")
+
+	var chickens = []map[string]string{
+		map[string]string{"nama": "chicken blue", "gender": "male"},
+		map[string]string{"nama": "chicken red", "gender": "male"},
+		map[string]string{"nama": "chicken yellow", "gender": "female"},
+	}
+	for _, chicken7 := range chickens {
+		fmt.Println(chicken7["gender"], chicken7["nama"])
+	}
 }
